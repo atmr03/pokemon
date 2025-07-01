@@ -1,0 +1,110 @@
+/* General Body Styles */
+body {
+  font-family: "Arial", sans-serif; /* Menggunakan font Arial atau sans-serif lainnya */
+  background-color: #f0f2f5; /* Warna latar belakang abu-abu muda */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Menyusun item secara vertikal */
+  align-items: center; /* Memusatkan item secara horizontal */
+  justify-content: center; /* Memusatkan item secara vertikal (jika ada cukup ruang) */
+  min-height: 100vh; /* Tinggi minimum 100% dari viewport height */
+  margin: 0; /* Menghilangkan margin default body */
+  color: #333; /* Warna teks default */
+  padding: 20px; /* Padding di sekitar konten */
+  box-sizing: border-box; /* Memastikan padding termasuk dalam lebar/tinggi elemen */
+}
+
+/* Heading Styles */
+h1 {
+  color: #3f51b5; /* Warna biru untuk judul */
+  margin-bottom: 30px; /* Jarak bawah judul */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Efek bayangan teks */
+  font-size: 2.5em; /* Ukuran font judul */
+  text-align: center;
+}
+
+/* Input Field Styles */
+#search {
+  padding: 12px 15px; /* Padding untuk input */
+  border: 2px solid #ccc; /* Border abu-abu */
+  border-radius: 8px; /* Sudut membulat */
+  width: 300px; /* Lebar input */
+  max-width: 80%; /* Lebar maksimum agar responsif */
+  margin-bottom: 20px; /* Jarak bawah input */
+  font-size: 1.1em; /* Ukuran font input */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi halus saat hover/fokus */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sedikit bayangan */
+}
+
+#search::placeholder {
+  color: #999; /* Warna placeholder */
+}
+
+#search:focus {
+  border-color: #3f51b5; /* Warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+  box-shadow: 0 0 10px rgba(63, 81, 181, 0.2); /* Bayangan saat fokus */
+}
+
+/* Button Styles */
+button {
+  background-color: #4caf50; /* Warna hijau untuk tombol */
+  color: white; /* Warna teks putih */
+  padding: 12px 25px; /* Padding tombol */
+  border: none; /* Tanpa border */
+  border-radius: 8px; /* Sudut membulat */
+  cursor: pointer; /* Kursor berubah jadi pointer */
+  font-size: 1.1em; /* Ukuran font tombol */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transisi halus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+  margin-bottom: 30px; /* Jarak bawah tombol */
+}
+
+button:hover {
+  background-color: #45a049; /* Warna hijau sedikit lebih gelap saat hover */
+  transform: translateY(-2px); /* Sedikit mengangkat tombol */
+}
+
+button:active {
+  background-color: #3e8e41; /* Warna hijau lebih gelap saat ditekan */
+  transform: translateY(0); /* Kembali ke posisi semula */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lebih kecil saat ditekan */
+}
+
+/* Pokemon Image Styles */
+#gambarPokemon {
+  max-width: 250px; /* Lebar maksimum gambar */
+  width: 300px;
+  height: auto; /* Tinggi otomatis agar proporsional */
+  border: 5px solid #ffcb05; /* Border kuning khas Pokemon */
+  border-radius: 50%; /* Membuat gambar bulat */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan kuat */
+  margin-top: 30px; /* Jarak atas gambar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+  background-color: #fff; /* Latar belakang putih untuk gambar */
+  padding: 10px; /* Padding di dalam border */
+  cursor: pointer;
+}
+
+#gambarPokemon:hover {
+  transform: scale(1.05) rotate(5deg); /* Sedikit membesar dan berputar saat hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+
+  #search {
+    width: 90%; /* Lebar input lebih besar untuk layar kecil */
+  }
+
+  button {
+    width: 80%; /* Lebar tombol lebih besar */
+  }
+
+  #gambarPokemon {
+    max-width: 200px; /* Ukuran gambar lebih kecil */
+  }
+}
