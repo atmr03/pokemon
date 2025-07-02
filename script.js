@@ -3,6 +3,10 @@ async function fetchPokemon() {
     const search = document.getElementById("search").value.toLowerCase();
     const respon = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`);
     const data = await respon.json();
+
+    if (!data) {
+      alert("nama pokemon tidak valid");
+    }
     const detail = data;
     const pokemonSpire = data.sprites.front_default;
     const gambar = document.getElementById("gambarPokemon");
@@ -12,12 +16,18 @@ async function fetchPokemon() {
     gambar.onclick = function () {
       // displayPokemonDetails(currentPokemonData);
 
-      const { name, types, weight, height } = detail;
+      const { name, weight, height } = detail;
       console.log(height);
-      const wadahDetail = document.getElementById("detail");
-      wadahDetail.innerHTML = name;
+      const namaPok = document.getElementById("nama");
+      const weightPok = document.getElementById("weight");
+      const heightPok = document.getElementById("height");
+      const detailpok = document.getElementById("detail");
+      detailpok.style.display = "block";
+      namaPok.innerHTML = "Nama Pokemon " + " - " + " " + name;
+      weightPok.innerHTML = "Berat Pokemon " + " - " + " " + weight;
+      heightPok.innerHTML = "Tinggi Pokemon " + " - " + " " + height;
     };
   } catch (e) {
-    console.log(e);
+    alert("pokemon tidak ditemukan");
   }
 }
